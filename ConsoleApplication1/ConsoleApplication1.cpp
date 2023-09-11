@@ -9,9 +9,9 @@
 #ifdef __unix__                    
 
 #define OS_Windows 0
-constexpr auto path_ = "//";
-constexpr auto file = "//ip_filter.tsv";
-constexpr auto file_write = "//ip_filter_result.tsv";
+constexpr auto path_ = "/";
+constexpr auto file = "/ip_filter.tsv";
+constexpr auto file_write = "/ip_filter_result.tsv";
 
 
 #elif defined(_WIN32) || defined(WIN32)    
@@ -25,11 +25,7 @@ constexpr auto file_write = "\\ip_filter_result.tsv";
 #endif
 
 std::string file_path(__FILE__);
-#ifdef OS_Windows
-std::string dir_path = file_path.substr(0, file_path.rfind("\\"));
-#else 
-std::string dir_path = file_path.substr(0, file_path.rfind("//"));
-#endif 
+
 
 int write_from_file(std::vector<ipAdress> allAdress);
 std::vector<ipAdress>  print_values_by_bytse(std::vector<ipAdress> Alladress, int numberBytesUouneed, int first = 0, int second = 0, int third = 0, int fouth =0);
@@ -40,10 +36,10 @@ int main()
     setlocale(LC_ALL, "Russian");
 
     std::string file_path(__FILE__);
-#ifdef OS_Windows
+#if OS_Windows == 1
     std::string dir_path = file_path.substr(0, file_path.rfind("\\"));
 #else 
-    std::string dir_path = file_path.substr(0, file_path.rfind("//"));
+    std::string dir_path = file_path.substr(0, file_path.rfind("/"));
 #endif 
     std::vector<ipAdress> allAdress;
     std::string dir_path_read = dir_path;
@@ -73,6 +69,12 @@ int main()
 }
 
 int write_from_file(std::vector<ipAdress> allAdress) {
+    #if OS_Windows == 1
+std::string dir_path = file_path.substr(0, file_path.rfind("\\"));
+#else 
+std::string dir_path = file_path.substr(0, file_path.rfind('/'));
+int a =0;
+#endif 
     std::string dir_path_write = dir_path;
     dir_path_write.append(file_write);
     std::ofstream out(dir_path_write);
