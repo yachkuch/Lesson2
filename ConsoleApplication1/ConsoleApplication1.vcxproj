@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="ipAdress.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ip_filter.tsv" />
+    <None Include="ip_filter_result.tsv" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ipAdress.h" />

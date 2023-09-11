@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+/ConsoleApplication1/build/
+/ConsoleApplication1/x64/
+
 # User-specific files
 *.rsuser
 *.suo
