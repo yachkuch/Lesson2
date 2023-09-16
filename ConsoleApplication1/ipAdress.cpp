@@ -57,32 +57,18 @@ ipAdress::ipAdress(ipAdress&& adr)
 
 bool ipAdress::operator>( ipAdress &data) const
 {
-	std::vector<int> firste;
-	firste.push_back(first);
-	firste.push_back(second);
-	firste.push_back(third);
-	firste.push_back(fouth);
-	std::vector<int> seconde;
-	seconde.push_back(data.first);
-	seconde.push_back(data.second);
-	seconde.push_back(data.third);
-	seconde.push_back(data.fouth);
-	return firste>seconde;
+	auto makeTie = [](const ipAdress& d) {
+		return std::tie(d.first, d.second, d.third, d.fouth);
+	};
+	return makeTie(*this) > makeTie(data);
 }
 
 bool ipAdress::operator<(const ipAdress &data) const
 {
-	std::vector<int> firste;
-	firste.push_back(first);
-	firste.push_back(second);
-	firste.push_back(third);
-	firste.push_back(fouth);
-	std::vector<int> seconde;
-	seconde.push_back(data.first);
-	seconde.push_back(data.second);
-	seconde.push_back(data.third);
-	seconde.push_back(data.fouth);
-	return firste<seconde;
+	auto makeTie = [](const ipAdress& d) {
+		return std::tie(d.first, d.second, d.third, d.fouth);
+	};
+	return makeTie(*this) < makeTie(data);
 }
 
 ipAdress& ipAdress::operator=(ipAdress&& adr)
