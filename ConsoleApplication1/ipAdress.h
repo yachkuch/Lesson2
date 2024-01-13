@@ -11,7 +11,7 @@ public:
 	ipAdress(ipAdress&& adr);
 
 	ipAdress& operator =(ipAdress&& adr);
-    bool operator ==( ipAdress &data) const;
+    bool operator ==(const ipAdress &data) const;
 	bool operator >( ipAdress &data) const;
 	bool operator<(const ipAdress& data) const;
 	bool operator ()(ipAdress const& ab) const;

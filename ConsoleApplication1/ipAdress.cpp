@@ -47,7 +47,7 @@ ipAdress::ipAdress(ipAdress&& adr)
 	ip_adress = adr.ip_adress;
 }
 
- bool ipAdress::operator==( ipAdress &data) const
+ bool ipAdress::operator==(const ipAdress &data) const
 {
 	if (first == data.first && second == data.second && third == data.third && fouth == data.fouth) {
 		return true;
