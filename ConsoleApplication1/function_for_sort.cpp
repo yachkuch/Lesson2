@@ -41,6 +41,3 @@ inline std::vector<ipAdress>  filter_values_by_bytse(const std::vector<ipAdress>
     return print;
 }
 
-inline int ass(){
-    return 0;
-}

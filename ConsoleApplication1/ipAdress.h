@@ -2,11 +2,15 @@
 
 #include<iostream>
 #include<string>
+#include <array>
+#include <cstdint>
+#include <tuple>
 
 class ipAdress
 {
+	using uint8_t = std::uint8_t;
 public:
-	ipAdress(std::string adr);
+	ipAdress(std::string &&adr);
 	ipAdress(const ipAdress &adr);
 	ipAdress(ipAdress&& adr);
 
@@ -27,10 +31,6 @@ public:
 private:
 
 	std::string ip_adress;
-
-	int first = 0;
-	int second = 0;
-	int third = 0;
-	int fouth = 0;
+	std::array<uint8_t,4> ip_adr;
 };
 

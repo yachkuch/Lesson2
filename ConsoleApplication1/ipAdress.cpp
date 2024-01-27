@@ -2,7 +2,7 @@
 
 #include<vector>
 
-ipAdress::ipAdress(std::string adr)
+ipAdress::ipAdress(std::string && adr)
 {
 	ip_adress = adr;
 	auto iter = adr.begin();
@@ -13,43 +13,44 @@ ipAdress::ipAdress(std::string adr)
 		buff.append(1,*iter);
 		if (*iter == '.') {
 			if (counter == 0) {
-				this->first = std::stoi(buff);
+				this->ip_adr[0] = std::stoi(buff);
 			}
 			else if (counter == 1) {
-				this->second = std::stoi(buff);
+				this->ip_adr[1] = std::stoi(buff);
 			}
 			else if (counter == 2) {
-				this->third = std::stoi(buff);
+				this->ip_adr[2] = std::stoi(buff);
 			}
 			counter++;
 			buff.clear();
 		}
 		iter++;
 	}
-	this->fouth = std::stoi(buff);
+	this->ip_adr[3] = std::stoi(buff);
 }
 
 ipAdress::ipAdress(const ipAdress& adr)
 {
-	first = adr.first;
-	second = adr.second;
-	third = adr.third;
-	fouth = adr.fouth;
+	this->ip_adr[0] = adr.ip_adr[0];
+	this->ip_adr[1] = adr.ip_adr[1];
+	this->ip_adr[2] = adr.ip_adr[2];
+	this->ip_adr[3] = adr.ip_adr[3];
 	ip_adress = adr.ip_adress;
 }
 
 ipAdress::ipAdress(ipAdress&& adr)
 {
-	first = adr.first;
-	second = adr.second;
-	third = adr.third;
-	fouth = adr.fouth;
+	this->ip_adr[0] = adr.ip_adr[0];
+	this->ip_adr[1] = adr.ip_adr[1];
+	this->ip_adr[2] = adr.ip_adr[2];
+	this->ip_adr[3] = adr.ip_adr[3];
 	ip_adress = adr.ip_adress;
 }
 
  bool ipAdress::operator==(const ipAdress &data) const
 {
-	if (first == data.first && second == data.second && third == data.third && fouth == data.fouth) {
+	if (this->ip_adr[0] == data.ip_adr[0] && this->ip_adr[1] == data.ip_adr[1] && this->ip_adr[2] == data.ip_adr[2] &&
+	 this->ip_adr[3] == data.ip_adr[3]) {
 		return true;
 	}
 	return false;
@@ -58,7 +59,7 @@ ipAdress::ipAdress(ipAdress&& adr)
 bool ipAdress::operator>( ipAdress &data) const
 {
 	auto makeTie = [](const ipAdress& d) {
-		return std::tie(d.first, d.second, d.third, d.fouth);
+		return std::tie(d.ip_adr[0], d.ip_adr[1], d.ip_adr[2], d.ip_adr[3]);
 	};
 	return makeTie(*this) > makeTie(data);
 }
@@ -66,7 +67,7 @@ bool ipAdress::operator>( ipAdress &data) const
 bool ipAdress::operator<(const ipAdress &data) const
 {
 	auto makeTie = [](const ipAdress& d) {
-		return std::tie(d.first, d.second, d.third, d.fouth);
+		return std::tie(d.ip_adr[0], d.ip_adr[1], d.ip_adr[2], d.ip_adr[3]);
 	};
 	return makeTie(*this) < makeTie(data);
 }
@@ -75,42 +76,42 @@ ipAdress& ipAdress::operator=(ipAdress&& adr)
 {
 	if (*this == adr) return *this;
 
-	first = adr.first;
-	second = adr.second;
-	third = adr.third;
-	fouth = adr.fouth;
+	this->ip_adr[0] = adr.ip_adr[0];
+	this->ip_adr[1] = adr.ip_adr[1];
+	this->ip_adr[2] = adr.ip_adr[2];
+	this->ip_adr[3] = adr.ip_adr[3];
 	ip_adress = adr.ip_adress;
 	return *this;
 }
 
 
-bool ipAdress::operator ()(ipAdress const& ab) const {
+bool ipAdress::operator ()(const ipAdress & ab) const {
 	return false;
 }
 
 int ipAdress::get_first()
 {
-	return first;
+	return this->ip_adr[0];
 }
 
 void ipAdress::printAsdress()
 {
-	std::cout << first << "." << second << "." << third << "" << fouth << std::endl;
+	std::cout << this->ip_adr[0] << "." << this->ip_adr[1] << "." << this->ip_adr[2] << "" << this->ip_adr[3] << std::endl;
 }
 
 int ipAdress::get_second()
 {
-	return second;
+	return this->ip_adr[1];
 }
 
 int ipAdress::get_third()
 {
-	return third;
+	return this->ip_adr[2];
 }
 
 int ipAdress::get_fouth()
 {
-	return fouth;
+	return this->ip_adr[3];
 }
 std::string ipAdress:: get_string_adress() {
 	return ip_adress;
