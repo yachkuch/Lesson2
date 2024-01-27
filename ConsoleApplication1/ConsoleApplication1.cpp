@@ -18,8 +18,6 @@ int write_from_file(std::vector<ipAdress> allAdress);
 void print(const std::vector<ipAdress> &allAdress);
 
 int main() {
-    std::string val;
-    std::cin>>val;
   setlocale(LC_ALL, "Russian");
   std::vector<ipAdress> allAdress;
    if (scenary_read_data) {
