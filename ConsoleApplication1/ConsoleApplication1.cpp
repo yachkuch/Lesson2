@@ -18,9 +18,11 @@ int write_from_file(std::vector<ipAdress> allAdress);
 void print(const std::vector<ipAdress> &allAdress);
 
 int main() {
+    std::string val;
+    std::cin>>val;
   setlocale(LC_ALL, "Russian");
   std::vector<ipAdress> allAdress;
-  if (scenary_read_data) {
+   if (scenary_read_data) {
     std::fstream readable_file(path);
     if (readable_file.is_open()) {
       std::string line_buffer;
@@ -29,19 +31,27 @@ int main() {
         allAdress.push_back(std::move(line_buffer));
       }
     } else {
-        bool spend_insert = true;
+      std::cout << "File doesnt search" << std::endl;
+      return 0;  
+    }
+    readable_file.close();
+    
+  } else {
+    
+    bool spend_insert = true;
         std::cout<<"If you want start sort write go"<<std::endl;
         while(spend_insert){
             std::string val;
             std::cin>>val;
             if(val == "go"){
                 spend_insert = false;
+                break;
             } else {
                 allAdress.push_back(std::move(val));
             }
         }
-    }
-    readable_file.close();
+  }
+    
     std::cout << "Full sort" << std::endl;
     std::sort(allAdress.begin(), allAdress.end());
     // write_from_file(allAdress);
@@ -51,9 +61,6 @@ int main() {
     print(filter_values_by_bytse(allAdress, 2, 46, 70));
     print(filter_values_by_bytse(allAdress, 3, 46, 46, 46, 46));
     std::cout << "finisg" << std::endl;
-  } else {
-    std::cout << "File doesnt search" << std::endl;
-  }
   system("pause");
 }
 

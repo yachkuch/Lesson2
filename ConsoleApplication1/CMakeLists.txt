@@ -48,23 +48,23 @@ target_link_libraries(test_version
     ${Boost_LIBRARIES}
 )
 
-if (MSVC)
-    target_compile_options(Homework2 PRIVATE
-        /W4
-    )
-    target_compile_options(test_version PRIVATE
-        /W4
-    )
+# if (MSVC)
+#     target_compile_options(Homework2 PRIVATE
+#         /W4
+#     )
+#     target_compile_options(test_version PRIVATE
+#         /W4
+#     )
 
-else ()
-    target_compile_options(Homework2 PRIVATE
-        -Wall -Wextra -pedantic 
-    )
-    target_compile_options(test_version PRIVATE
-        -Wall -Wextra -pedantic 
-    )
+# else ()
+#     target_compile_options(Homework2 PRIVATE
+#         -Wall -Wextra -pedantic 
+#     )
+#     target_compile_options(test_version PRIVATE
+#         -Wall -Wextra -pedantic 
+#     )
 
-endif()
+# endif()
 
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
