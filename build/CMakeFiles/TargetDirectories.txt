@@ -1,0 +1,7 @@
+D:/Projects/Lesson2/build/CMakeFiles/Homework2.dir
+D:/Projects/Lesson2/build/CMakeFiles/test_version.dir
+D:/Projects/Lesson2/build/CMakeFiles/package.dir
+D:/Projects/Lesson2/build/CMakeFiles/package_source.dir
+D:/Projects/Lesson2/build/CMakeFiles/test.dir
+D:/Projects/Lesson2/build/CMakeFiles/edit_cache.dir
+D:/Projects/Lesson2/build/CMakeFiles/rebuild_cache.dir

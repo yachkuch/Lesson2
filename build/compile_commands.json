@@ -1,0 +1,32 @@
+[
+{
+  "directory": "D:/Projects/Lesson2/build",
+  "command": "D:\\dev\\mingw64\\bin\\clang++.exe  @CMakeFiles/Homework2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Homework2.dir\\ConsoleApplication1.cpp.obj -c D:\\Projects\\Lesson2\\ConsoleApplication1\\ConsoleApplication1.cpp",
+  "file": "D:/Projects/Lesson2/ConsoleApplication1/ConsoleApplication1.cpp"
+},
+{
+  "directory": "D:/Projects/Lesson2/build",
+  "command": "D:\\dev\\mingw64\\bin\\clang++.exe  @CMakeFiles/Homework2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Homework2.dir\\ipAdress.cpp.obj -c D:\\Projects\\Lesson2\\ConsoleApplication1\\ipAdress.cpp",
+  "file": "D:/Projects/Lesson2/ConsoleApplication1/ipAdress.cpp"
+},
+{
+  "directory": "D:/Projects/Lesson2/build",
+  "command": "D:\\dev\\mingw64\\bin\\clang++.exe  @CMakeFiles/Homework2.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Homework2.dir\\function_for_sort.cpp.obj -c D:\\Projects\\Lesson2\\ConsoleApplication1\\function_for_sort.cpp",
+  "file": "D:/Projects/Lesson2/ConsoleApplication1/function_for_sort.cpp"
+},
+{
+  "directory": "D:/Projects/Lesson2/build",
+  "command": "D:\\dev\\mingw64\\bin\\clang++.exe -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB  -g -o CMakeFiles\\test_version.dir\\Test.cpp.obj -c D:\\Projects\\Lesson2\\ConsoleApplication1\\Test.cpp",
+  "file": "D:/Projects/Lesson2/ConsoleApplication1/Test.cpp"
+},
+{
+  "directory": "D:/Projects/Lesson2/build",
+  "command": "D:\\dev\\mingw64\\bin\\clang++.exe -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB  -g -o CMakeFiles\\test_version.dir\\ipAdress.cpp.obj -c D:\\Projects\\Lesson2\\ConsoleApplication1\\ipAdress.cpp",
+  "file": "D:/Projects/Lesson2/ConsoleApplication1/ipAdress.cpp"
+},
+{
+  "directory": "D:/Projects/Lesson2/build",
+  "command": "D:\\dev\\mingw64\\bin\\clang++.exe -DBOOST_TEST_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_NO_LIB  -g -o CMakeFiles\\test_version.dir\\function_for_sort.cpp.obj -c D:\\Projects\\Lesson2\\ConsoleApplication1\\function_for_sort.cpp",
+  "file": "D:/Projects/Lesson2/ConsoleApplication1/function_for_sort.cpp"
+}
+]

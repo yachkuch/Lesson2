@@ -7,7 +7,7 @@
 #include "function_for_sort.cpp"
 #include "ipAdress.h"
 //! Сценарий получения данных, если true из файла иначе из командной строки
-constexpr bool scenary_read_data = false;
+constexpr bool scenary_read_data = true;
 
 std::filesystem::path
     path(std::filesystem::current_path().append("ip_filter.tsv"));
@@ -51,7 +51,7 @@ int main() {
   }
     
     std::cout << "Full sort" << std::endl;
-    std::sort(allAdress.begin(), allAdress.end());
+    std::sort(allAdress.rbegin(), allAdress.rend());
     // write_from_file(allAdress);
     print(allAdress);
     std::cout << "Finish full sort" << std::endl;
